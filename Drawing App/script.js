@@ -11,22 +11,8 @@ let size = 10;
 let isPressed = false;
 let x;
 let y;
-let color = colorEl.value
-increaseBtn.addEventListener("click", (e) => {
-  size += 5;
-  sizeEL.innerText = size;
-  if (size > 50) {
-    size = 50;
-    updateSizeOnScreen();
-  }
-});
-decreaseBtn.addEventListener("click", () => {
-  size -= 5;
-  if (size < 5) {
-    size = 5;
-  }
-  updateSizeOnScreen();
-});
+let color = colorEl.value;
+
 canvas.addEventListener("mousedown", (e) => {
   isPressed = true;
   x = e.offsetX;
@@ -62,8 +48,25 @@ function drawLine(x1, y1, x2, y2) {
   ctx.lineWidth = size * 2;
   ctx.stroke();
 }
+increaseBtn.addEventListener("click", (e) => {
+  size += 5;
+  sizeEL.innerText = size;
+  if (size > 50) {
+    size = 50;
+    updateSizeOnScreen();
+  }
+});
+decreaseBtn.addEventListener("click", () => {
+  size -= 5;
+  if (size < 5) {
+    size = 5;
+  }
+  updateSizeOnScreen();
+});
 function updateSizeOnScreen() {
   sizeEL.innerText = size;
 }
-colorEl.addEventListener('change', (e) => color = e.target.value)
-clearEl.addEventListener('click', () => ctx.clearRect(0,0, canvas.width, canvas.height))
+colorEl.addEventListener("change", (e) => (color = e.target.value));
+clearEl.addEventListener("click", () =>
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+);
