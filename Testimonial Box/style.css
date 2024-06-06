@@ -76,7 +76,7 @@ body {
 .progress-bar{
   height: 4px;
   background-color: #fff;
-  animation: grow 10s linear infinite;
+  animation: grow 5s linear infinite;
   transform-origin: left;
 }
 @keyframes grow{
