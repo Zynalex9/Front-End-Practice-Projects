@@ -24,6 +24,11 @@ body {
   margin: 5px 5px;
   height: 300px;
   width: 300px;
+transition: all .3s;
+}
+img:hover{
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  border: 1px solid #eee;
 }
 input {
   text-align: center;
